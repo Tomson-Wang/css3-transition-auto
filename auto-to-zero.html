@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3 Transition Auto to Zero</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        #auto {
+            width: 100px;
+            max-height: 200px;
+            overflow: hidden;
+            background-color: lightskyblue;
+        }
+
+        #toggle:hover ~ #auto {
+            width: 100px;
+            max-height: 0;
+            transition: max-height .3s ease-in-out;
+            overflow: hidden;
+            background-color: lightskyblue;
+        }
+    </style>
+</head>
+<body>
+<button id="toggle">Action</button>
+<div contenteditable="true" id="auto">Edit Me！Edit Me！Edit Me！
+</div>
+</body>
+</html>
