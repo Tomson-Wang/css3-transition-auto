@@ -1,33 +1,43 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>CSS3 Transition Auto to Zero</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0
-        }
+  <meta charset="UTF-8">
+  <title>CSS3 Transition Zero to Auto</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0
+    }
 
-        #auto {
-            width: 100px;
-            max-height: 0;
-            overflow: hidden;
-            background-color: lightskyblue;
-        }
+    textarea{
+      border: 1px solid red;
+    }
 
-        #toggle:hover ~ #auto {
-            width: 100px;
-            max-height: 200px;
-            transition: max-height .3s ease-in-out;
-            overflow: hidden;
-            background-color: lightskyblue;
-        }
-    </style>
+    #auto {
+      width: 100px;
+      max-height: 0;
+      overflow: hidden;
+      background-color: lightskyblue;
+    }
+
+    #toggle:hover ~ #auto {
+      width: 100px;
+      max-height: 200px;
+      transition: max-height .3s ease-in-out;
+      overflow: hidden;
+      background-color: lightskyblue;
+    }
+  </style>
 </head>
 <body>
+<textarea>在这里修改DIV的内容来改变其高度</textarea>
 <button id="toggle">Action</button>
 <div contenteditable="true" id="auto">Edit Me！e！e！Editdite！Edit Me！
 </div>
+<script>
+  setInterval(function(){
+    document.getElementById('auto').innerHTML = document.getElementsByTagName('textarea')[0].value;
+  }, 200);
+</script>
 </body>
 </html>
